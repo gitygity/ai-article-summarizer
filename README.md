@@ -47,7 +47,7 @@ yarn
 HUGGINGFACE_API_KEY=your_api_key_here
 ```
 
-4. Run the development server: https://ai-article-summarizer-theta.vercel.app/
+4. Run the development server: 
 
 ```bash
 npm run dev
@@ -96,7 +96,7 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🔗 Live Demo
 
->  
+>  https://ai-article-summarizer-theta.vercel.app/
 
 ---
 
