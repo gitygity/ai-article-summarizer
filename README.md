@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Text Summarizer
 
-## Getting Started
+A **Next.js 13+ project** that summarizes long texts into concise summaries using a modern React + React Query setup. 
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- **Next.js 13** with App Router (`app/`) and Client Components  
+- **React Query (TanStack Query)** for async data fetching and caching  
+- **LocalStorage-based History** to track previous inputs and summaries  
+- **Hydration-safe and SSR-friendly**  
+- **Error handling & loading states**  
+- **Responsive UI** built with Tailwind CSS  
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** React 18, Next.js 13+, Tailwind CSS  
+- **Data Fetching:** React Query (`@tanstack/react-query`)  
+- **API:** Hugging Face Inference API (BART model)  
+- **State Management:** Local component state + React Query cache  
+
+---
+
+## 📦 Installation
+
+1. Clone the repo:
+
+```bash
+git clone https://github.com/gitygity/ai-article-summarizer.git
+cd ai-article-summarizer
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+# or
+yarn
+```
+
+3. Create `.env.local` file and add your Hugging Face API key:
+
+```env
+HUGGINGFACE_API_KEY=your_api_key_here
+```
+
+4. Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📖 Usage
 
-## Learn More
+1. Paste a long text into the textarea.  
+2. Click **Summarize**.  
+3. View the summary below and your input history stored locally.  
+4. Click any previous input from history to refill the textarea.  
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 💡 Implementation Details
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **React Query `useMutation`** handles async summarization requests.  
+- **Hydration-safe history**: localStorage is only accessed on the client to prevent SSR mismatch.  
+- **Safe rendering**: All potentially undefined data is validated before rendering to avoid runtime errors.  
+- **UI/UX**: Loading state and error messages provide smooth user experience.  
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📂 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+/app
+  /page.tsx # Main page and UI
+/lib
+  /useSummarize.ts # React Query mutation hook
+/api
+  /summarize
+    /route.ts # API route for summarization
+/providers
+  /ReactQueryProvider.tsx # QueryClientProvider setup  
+
+```
+
+---
+
+## 🔗 Live Demo
+
+>  
+
+---
+
+## 🏆 Learning Goals
+
+This project demonstrates:
+
+- Full Next.js 13 client/server component understanding  
+- Integrating React Query with async APIs  
+- Safe localStorage usage with SSR + hydration  
+- Building reusable hooks and clean state management  
+- Error handling and user-friendly UI  
+
+---
+
+## 📜 License
+
+MIT © Gity ghasemi
